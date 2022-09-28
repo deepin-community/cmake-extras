@@ -1,0 +1,474 @@
+cmake-extras (1.5-8) unstable; urgency=medium
+
+  * debian/patches:
+    + Add 1008_src-DoxygenBuilder-Doxyfile.in-Create-Doxgen-documen.patch.
+      Don't put <<PKGBUILDDIR>> into generated documentation files.
+  * debian/control:
+    + Bump Standards-Version: to 4.6.0. No changes needed.
+    + Bump DH compat level to version 13.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 08 Nov 2021 19:01:20 +0100
+
+cmake-extras (1.5-7) unstable; urgency=medium
+
+  * debian/patches:
+    + Add Forwarded: URL to 1007_fix-FTCBFS-of-googlemock-projects.patch.
+  * debian/control:
+    + Add D (cmake-extras): pkg-config. (Closes: #973095).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 06 Nov 2020 16:22:28 +0100
+
+cmake-extras (1.5-6) unstable; urgency=medium
+
+  * debian/control:
+    + Fix pkgname in Suggests: field.
+  * debian/patches:
+    + Add 1007_fix-FTCBFS-of-googlemock-projects.patch. Fix cross-building
+      projects that leverage GMockConfig.cmake. (Closes: #973580).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 02 Nov 2020 08:57:31 +0100
+
+cmake-extras (1.5-5) unstable; urgency=medium
+
+  * debian/patches:
+    + Fix 1006_...patch. Roll-back changes introduce to work around problems in
+      Debian's googletest, introduced with 1.10.0.20201018-1, but amended in
+      1.10.0.20201025-1. (Closes: #973214, #973163, #973078).
+  * debian/control:
+    + Update Suggests: field, with versioned googletest and libgtest-dev.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 29 Oct 2020 17:04:18 +0100
+
+cmake-extras (1.5-4) unstable; urgency=medium
+
+  * debian/patches:
+    + Update 1006_fix-googletests-1_10_0.patch. Fix googlemock include
+      directory.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 24 Oct 2020 18:13:55 +0200
+
+cmake-extras (1.5-3) unstable; urgency=medium
+
+  * debian/patches:
+    + Add 1006_fix-googletests-1_10_0.patch. Update GMockConfig.cmake for
+      googletest up to 1.10.0.20201018.
+  * debian/tests/control:
+    + Require libgtest-dev and pkg-config for gmock autopkgtest.
+    + Trailing comma or all dependencies.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 24 Oct 2020 01:43:05 +0200
+
+cmake-extras (1.5-2) unstable; urgency=medium
+
+  [ Michael Hudson-Doyle ]
+  * debian/patches:
+    + Add 1005_fix_intltool-demo.patch. Add #include of <locale.h> to
+      examples/intltool-demo/src/main.cpp, fixing autopkgtest. (Closes:
+      #946066).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 18 Oct 2020 20:30:14 +0200
+
+cmake-extras (1.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/{control,copyright,watch}:
+    + New upstream location (UBports' GitLab).
+  * debian/patches:
+    + Drop 0001_73_72.patch, 0002_74_73.patch and 0003_75_74.patch.
+      Applied upstream.
+    + Drop 1001_ensure-python3-usage.patch. Not used anymore.
+  * debian/control:
+    + Add Debian UBports Team to Uploaders: field.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 26 Feb 2020 14:06:44 +0100
+
+cmake-extras (1.3+17.04.20170310-7) unstable; urgency=medium
+
+  * Fixup several autopkgtests. Details, see below. (Closes:
+    #947609).
+
+  * debian/patches:
+    + Update 1004_switch-to-python3.patch, Fix bytes vs. string issue.
+  * debian/control:
+    + Fix typo in Suggests: field name.
+  * debian/tests/control:
+    + Fix intltool test failure on Debian, add alternative D 'locales-all' to D
+      'language-pack-en' (which only exists in Ubuntu and derivatives).
+    + Update Ds (includechecker test): python-clang -> python3-clang.
+    + Versioned test dependency on python3-clang (>= 0.49~). Currently only
+      available in experimental. So, we have to expect the autopkgtest on this
+      package to fail, until python3-clang is available in Debian unstable.
+  * debian/tests/:
+    + Make all test scripts executable.
+  * debian/tests/{control,gdbus}:
+    + Run gdbus test as dbus-test-runner task. We normally don't have a system
+      DBus available in build/test chroots.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 09 Jan 2020 12:43:46 +0100
+
+cmake-extras (1.3+17.04.20170310-6) unstable; urgency=medium
+
+  * debian/patches:
+    + Add 1003_fix-googletests_1_9.patch. The libgtest*.a and libgmock*.a get
+      installed to gmock_bin_dir/lib/ now.
+    + Add 1004_switch-to-python3.patch. Port helper and demo scripts from Py2
+      to Py3.
+  * debian/{control,compat}:
+    + Switch to debhelper-compat notation. Bump DH comat level to version 12.
+  * debian/control:
+    + Bump Standards-Version: to 4.4.1. No changes needed.
+    + Add Rules-Requires-Root: field and set it to "no".
+    + Update D (cmake-extras): python -> python3. (Closes: #942969).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 21 Nov 2019 10:58:15 +0100
+
+cmake-extras (1.3+17.04.20170310-5) unstable; urgency=medium
+
+  * debian/patches:
+    + Update/fix 1002_fix-googletest-1_8_1-1.patch. Now this really resolves
+      #910935.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 23 Oct 2018 14:44:44 +0200
+
+cmake-extras (1.3+17.04.20170310-4) unstable; urgency=medium
+
+  [ Gianfranco Costamagna ]
+  * debian/control:
+    + Use new python-clang metapackage to bring always the latest version
+    + Fixup VCS URL.
+
+  [ Mike Gabriel ]
+  * debian/control:
+    + Update Section: to devel.
+    + Bump Standards-Version: to 4.2.1. No changes needed.
+  * debian/patches:
+    + Add 1002_fix-googletest-1_8_1-1.patch. Make GMockConfig.cmake work with
+      googletest/1.8.1-1. (Closes: #910935).
+  + debian/rules:
+    + Drop unneeded DH argument --parallel.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 22 Oct 2018 16:40:48 +0200
+
+cmake-extras (1.3+17.04.20170310-3) unstable; urgency=medium
+
+  * debian/tests/control:
+    + Fix includechecker test. Use clang 6.0 for running the test. Thanks to
+      Gianfranco Costamagna. (Closes: #906255).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 18 Aug 2018 11:51:38 +0200
+
+cmake-extras (1.3+17.04.20170310-2) unstable; urgency=medium
+
+  [ Gianfranco Costamagna ]
+  * Switch back to Python2 implementation, the Python3 switch breaks
+    testsuite. (Closes: #870039).
+  * More verbosity in failing test.
+
+  [ Mike Gabriel ]
+  * debian/patches:
+    + Enable 0003_75_74.patch. By accident not added to series file in previous
+      upload.
+  * debian/control:
+    + Add Debian CMake Team to Uploaders: field.
+    + Update Vcs-*: fields. Packaging Git has been migrated to salsa.debian.org.
+    + Set Priority: to optional.
+    + Package now complies with Standards-Version: 4.2.0.
+  * debian/{control,compat}: Switch to DH compat level version 11.
+  * debian/patches:
+    + Enable 0003_75_74.patch. By accident not added to series file in previous
+      upload.
+  * debian/watch:
+    + Use secure URL for upstream tarball download.
+  * debian/examples:
+    + Add file. Install doxygenbuilder-demo examples into doc/ folder of this
+      package.
+  * debian/copyright:
+    + Use secure URI to obtain copyright format reference.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 14 Aug 2018 18:34:51 +0200
+
+cmake-extras (1.3+17.04.20170310-1) unstable; urgency=medium
+
+  * Initial upload to Debian. (Closes: #863191).
+  * debian/control:
+    + Debianize package (Maintainer: field, Uploaders: field, Vcs-*: fields)
+    + Provide more package info in LONG_DESCRIPTION.
+    + Add D (cmake-extras): python3.~
+  * debian/source/format:
+    + Use 3.0 (quilt) in Debian.
+  * debian/patches:
+    + Add empty folder with README about patch naming scheme.
+    + Cherry-pick Bzr rev73. Including various changes on debian/*.
+    + Cherry-pick Bzr rev74. Including various changes on debian/*.
+    + Cherry-pick Bzr rev75.
+    + Add 1001_ensure-python3-usage.patch. Convert include_checker.py to
+      Python3.
+  * debian/watch:
+    + Add file, point to Ubuntu's orig.tar.gz as no official tarball releases
+      are available.
+  * debian/copyright:
+    + This src:package is strictly licensed under LGPL-3, not LGPL-3+. Fix full
+      text in license paragraph accordingly.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 21 Jul 2017 11:43:00 +0200
+
+cmake-extras (1.3+17.04.20170310-0ubuntu1) zesty; urgency=medium
+
+  [ Pete ]
+  * Make GDBus source name generation work like more conventional macros.
+
+ -- Pete Woods <pete.woods@canonical.com>  Fri, 10 Mar 2017 12:38:01 +0000
+
+cmake-extras (1.2+17.04.20170228-0ubuntu1) zesty; urgency=medium
+
+  * Add function to compile GSettings schemas. (LP: #1664714)
+  * Handle merging translations into non-ini file types. (LP: #1664325)
+  * Append file globs for translation template function. (LP: #1664345)
+  * Use already unique translation template as target name.
+  * Add a GDbus module for using gdbus-codegen in cmake projects.
+  * Refactor GSettings module to provide a compile_schemas macro. (LP:
+    #1664714)
+  * Handle other style options for merging, and no translations for xml
+    style. (LP: #1664325)
+  * Append file globs rather than resetting the variable. (LP: #1664345)
+  * Don't use the gettext unique target magic for pot files.
+  * Add a module for using gdbus-codegen code with cmake.
+
+ -- Rodney Dawes <rodney.dawes@canonical.com>  Tue, 28 Feb 2017 17:48:00 +0000
+
+cmake-extras (1.2+17.04.20170213-0ubuntu1) zesty; urgency=medium
+
+  * Add autopkgtest for gsettings macro.
+  * Handle generated gschema files. (LP: #1661686)
+
+ -- Rodney Dawes <rodney.dawes@canonical.com>  Mon, 13 Feb 2017 18:16:40 +0000
+
+cmake-extras (1.1+17.04.20170209-0ubuntu1) zesty; urgency=medium
+
+  [ Pete ]
+  * Add IncludeChecker macro.
+  * Add FILTER argument to intltool macros.
+
+ -- Pete Woods <pete.woods@canonical.com>  Thu, 09 Feb 2017 12:47:56 +0000
+
+cmake-extras (1.0+17.04.20170110.1-0ubuntu1) zesty; urgency=medium
+
+  * Add autopkgtest for intltool macros
+  * Add autopkgtest for DoxygenBuilder macros
+
+ -- Pete Woods <pete.woods@canonical.com>  Tue, 10 Jan 2017 12:06:28 +0000
+
+cmake-extras (0.10+17.04.20161208.1-0ubuntu1) zesty; urgency=medium
+
+  [ Pete ]
+  * Migrate all modules to unversioned cmake directory.
+
+  [ James Henstridge ]
+  * Move coverage report code to use find_package(CoverageReport) rather
+    than include(EnableCoverageReport).
+
+ -- Pete Woods <pete.woods@canonical.com>  Thu, 08 Dec 2016 13:54:16 +0000
+
+cmake-extras (0.9+17.04.20161202.1-0ubuntu1) zesty; urgency=medium
+
+  [ Michi Henning ]
+  * Added CopyrightTest module.
+
+  [ James Henstridge ]
+  * Add an autopkgtest for the find_package(GMock) macro.
+  * Move some of the modules out of ${CMAKE_ROOT} and in to the
+    unversioned /usr/share/cmake/ directory.
+
+  [ Rodney Dawes ]
+  * Simplify the INSTALL_TRANSLATIONS command to avoid regenerating po
+    files. (LP: #1645856)
+
+ -- Michi Henning <michi@triodia.com>  Fri, 02 Dec 2016 05:59:21 +0000
+
+cmake-extras (0.8+17.04.20161125-0ubuntu1) zesty; urgency=medium
+
+  * More appropriate fix for gtest 1.8, backward compatible with 1.7.
+
+ -- Michi Henning <michi@triodia.com>  Fri, 25 Nov 2016 00:49:37 +0000
+
+cmake-extras (0.7+17.04.20161123.5-0ubuntu1) zesty; urgency=medium
+
+  * Fixes for gtest 1.8.0. (LP: #1644062) (LP: #1644062)
+
+ -- Michi Henning <michi@triodia.com>  Wed, 23 Nov 2016 06:25:33 +0000
+
+cmake-extras (0.7+16.04.20160513-0ubuntu5) zesty; urgency=medium
+
+  [ Timo Jyrinki, Martin Pitt ]
+  * Fix versioning for upper cmake version
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 15 Nov 2016 11:04:24 +0100
+
+cmake-extras (0.7+16.04.20160513-0ubuntu4) zesty; urgency=medium
+
+  [ Martin Pitt, Gianfranco Costamagna ]
+  * Enforce a particular cmake runtime dependency, because the installed
+    files have an hardcoded version directory, so we need to no-change
+    rebuild at each new cmake release.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 14 Nov 2016 17:41:56 +0100
+
+cmake-extras (0.7+16.04.20160513-0ubuntu3) zesty; urgency=medium
+
+  * Rebuild against new cmake 3.7.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 14 Nov 2016 15:05:04 +0100
+
+cmake-extras (0.7+16.04.20160513-0ubuntu2) zesty; urgency=medium
+
+  * No change rebuild for cmake 3.6 (LP: #1635613)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 21 Oct 2016 14:22:07 +0200
+
+cmake-extras (0.7+16.04.20160513-0ubuntu1) xenial; urgency=medium
+
+  [ Pete ]
+  * Add formatcode module.
+
+  [ Charles Kerr, Pete Woods ]
+  * Add optional `formatcode' test and rule for comparing code to, and
+    reformatting code to, a style guide standard.
+
+ -- Pete Woods <ci-train-bot@canonical.com>  Fri, 13 May 2016 15:39:57 +0000
+
+cmake-extras (0.6+16.04.20160215-0ubuntu2) xenial; urgency=medium
+
+  * No change rebuild for new cmake
+
+ -- Michael Terry <mterry@ubuntu.com>  Tue, 29 Mar 2016 09:47:08 -0400
+
+cmake-extras (0.6+16.04.20160215-0ubuntu1) xenial; urgency=medium
+
+  [ Pete Woods ]
+  * Add NO_INSTALL option to QmlPlugins.cmake (LP: #1539314).
+  * Respect DESTINATION parameter in QmlPlugins.cmake (LP: #1539314).
+
+  [ CI Train Bot ]
+  * No-change rebuild.
+
+ -- Pete Woods <ci-train-bot@canonical.com>  Mon, 15 Feb 2016 15:22:58 +0000
+
+cmake-extras (0.5+16.04.20160113-0ubuntu1) xenial; urgency=medium
+
+  * Add -g to compile flags for gtest/gmock, otherwise we don't
+    necessarily get debug info if a test needs debugging with gdb. Also
+    added warning suppressions to stop the noise from the build if the
+    caller has additional warnings enabled.
+
+ -- Michi Henning <michi.henning@canonical.com>  Wed, 13 Jan 2016 12:22:46 +0000
+
+cmake-extras (0.5+16.04.20151026-0ubuntu1) xenial; urgency=medium
+
+  * No change rebuild for cmake 3.3
+
+ -- Pete Woods <ci-train-bot@canonical.com>  Mon, 26 Oct 2015 07:35:06 +0000
+
+cmake-extras (0.5+15.10.20151021-0ubuntu1) wily; urgency=medium
+
+  [ Pete Woods ]
+  * Don't assume anything about the doxygen examples directory. (LP: #1476487)
+  * Only build docs when input files have changed. (LP: #1476488)
+
+  [ CI Train Bot ]
+  * No-change rebuild.
+
+ -- Pete Woods <ci-train-bot@canonical.com>  Wed, 21 Oct 2015 10:57:29 +0000
+
+cmake-extras (0.4+15.10.20151020-0ubuntu1) wily; urgency=medium
+
+  [ Michi Henning ]
+  * Append with a space to compile flags (fixes lp:1469952). (LP:
+    #1469952)
+
+ -- Pete Woods <ci-train-bot@canonical.com>  Tue, 20 Oct 2015 13:13:45 +0000
+
+cmake-extras (0.4+15.10.20150918-0ubuntu1) wily; urgency=medium
+
+  * Fix failure when no COPYRIGHT_HOLDER argument provided
+
+ -- Pete Woods <ci-train-bot@canonical.com>  Fri, 18 Sep 2015 08:34:37 +0000
+
+cmake-extras (0.4+15.10.20150622.1-0ubuntu1) wily; urgency=medium
+
+  [ Michi Henning ]
+  * Enable coverage with clang. If build type is coverage and clang is
+    used, clang emits coverage data in gcc format, so gcovr/lcov can be
+    used to generate the report.
+  * Fixes carried over from thumbnailer, made by James to correctly
+    filter XML coverage data, so we don't get tons of noise about system
+    files in the coverage report created by Jenkins.
+
+  [ Pete Woods ]
+  * Install modules using CMake to allow detection of CMake version (LP:
+    #1467030)
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Mon, 22 Jun 2015 08:55:27 +0000
+
+cmake-extras (0.4+15.10.20150618-0ubuntu1) wily; urgency=medium
+
+  [ Pete Woods ]
+  * Move scripts to cmake-3.2 dir for compatibility with Wily
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Thu, 18 Jun 2015 11:56:32 +0000
+
+cmake-extras (0.4+15.04.20150513-0ubuntu1) vivid; urgency=medium
+
+  [ Pete Woods ]
+  * Add QmlPlugin macros.
+  * Add Doxygen macro added: UseDoxygen.Doxyfile.in UseDoxygen.cmake
+  * Add GSettings macro added: UseGSettings.cmake
+
+  [ Michi Henning ]
+  * Added clean-coverage target
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Wed, 13 May 2015 15:19:10 +0000
+
+cmake-extras (0.3+15.04.20141204-0ubuntu1) vivid; urgency=medium
+
+  [ Pete Woods ]
+  * Add GMock macros.
+  * Add intltool macros
+
+  [ Daniel Holbach ]
+  * Move files to /usr/share/cmake-3.0. (LP: #1394648)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 04 Dec 2014 20:53:33 +0000
+
+cmake-extras (0.2+14.10.20140910-0ubuntu2) vivid; urgency=low
+
+  * debian/control:
+    - add "Multi-Arch: foreign" to allow installing in a click
+      crossbuild chroot
+  * UseXGettext.cmake:
+    - add missing "ALL" in xgettext_create_pot_file
+
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Thu, 30 Oct 2014 11:32:25 +0100
+
+cmake-extras (0.2+14.10.20140910-0ubuntu1) utopic; urgency=low
+
+  [ Pete Woods ]
+  * Support plural forms
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 10 Sep 2014 08:10:44 +0000
+
+cmake-extras (0.2+14.10.20140905-0ubuntu1) utopic; urgency=medium
+
+  [ Pete Woods ]
+  * Add XGettext translation macros.
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 05 Sep 2014 13:15:12 +0000
+
+cmake-extras (0.1+14.10.20140527-0ubuntu1) utopic; urgency=low
+
+  [ Allan LeSage ]
+  * Initial release.
+  * Initial commit.
+  * Added coverage macro files, added debian/copyright LGPL-3.
+  * Added debian/install for cmake macros.
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 27 May 2014 14:34:20 +0000

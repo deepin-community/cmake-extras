@@ -1,0 +1,70 @@
+Tests: findgmock
+Restrictions: allow-stderr
+Depends:
+  build-essential,
+  cmake,
+  cmake-extras,
+  googletest (>= 1.8.0) | google-mock,
+  libgtest-dev,
+  pkg-config,
+
+Tests: copyrighttest
+Restrictions: allow-stderr
+Depends:
+  build-essential,
+  cmake,
+  cmake-extras,
+  licensecheck | devscripts (<< 2.16.6),
+
+Tests: intltool
+Restrictions: allow-stderr
+Depends:
+  build-essential,
+  cmake,
+  cmake-extras,
+  language-pack-en | locales-all,
+  intltool,
+  libglib2.0-dev,
+  pkg-config,
+
+Tests: doxygenbuilder
+Restrictions: allow-stderr
+Depends:
+  build-essential,
+  cmake,
+  cmake-extras,
+  doxygen,
+  libxml2-utils,
+
+Tests: includechecker
+Restrictions: allow-stderr
+Depends:
+  build-essential,
+  clang,
+  cmake,
+  cmake-extras,
+  libclang-dev,
+  libglib2.0-dev,
+  pkg-config,
+  python3-clang (>= 0.49~),
+
+Tests: gsettings
+Restrictions: allow-stderr
+Depends:
+  build-essential,
+  cmake,
+  cmake-extras,
+  gettext,
+  libglib2.0-dev,
+  pkg-config,
+  uuid-runtime,
+
+Tests: gdbus
+Restrictions: allow-stderr
+Depends:
+  build-essential,
+  cmake,
+  cmake-extras,
+  dbus-test-runner,
+  libglib2.0-dev,
+  pkg-config,

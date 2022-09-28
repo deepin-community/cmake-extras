@@ -1,0 +1,2 @@
+version=4
+https://gitlab.com/ubports/core/cmake-extras/tags .*/cmake-extras-(\d\S+)\.tar\.gz

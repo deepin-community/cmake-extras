@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# autopkgtest check: Build a trivial project that uses the
+# find_package(Intltool) macro, and verify that the resulting test binary
+# behaves as expected.
+# (C) 2016 Canonical Ltd.
+# Author: Pete Woods <pete.woods@canonical.com>
+
+set -euo pipefail
+IFS=$'\n\t'
+
+tempdir=$(mktemp --tmpdir="${AUTOPKGTEST_TMP:-/tmp}" -d)
+trap "rm -rf $tempdir" 0 INT QUIT ABRT PIPE TERM
+
+demodir="$(pwd)/examples/intltool-demo"
+srcdir="${tempdir}/source"
+bindir="${tempdir}/build"
+installdir="${tempdir}/install"
+
+cp -r "${demodir}" "${srcdir}"
+mkdir -p "${bindir}"
+
+# Move into bindir temporarily
+(
+  cd "${bindir}"
+  cmake -DCMAKE_INSTALL_PREFIX="${installdir}" -DGSETTINGS_LOCALINSTALL=1 -DGSETTINGS_COMPILE=1 "${srcdir}"
+  make
+  make install
+)
+
+# Check the translatable strings have been extracted from the source files
+check_potfile() {
+  # Print using a similar format to glib-test
+  echo -n "/potfile/$1: "
+
+  set +e
+  grep -q "$1" "${srcdir}/po/intltool-demo.pot"
+  retval=$?
+  set -e
+
+  expected=${2:-0}
+
+  if [ ${retval} -eq ${expected} ]; then
+    echo "OK"
+  else
+    echo "FAILED"
+    return 1
+  fi
+}
+
+# From the C source
+check_potfile 'msgid "FooApp"'
+check_potfile 'msgid "FooApp is really great"'
+check_potfile 'msgid "Hello FooApp!"'
+check_potfile 'msgid "this translation should be ignored"' 1
+
+# From the python
+check_potfile 'msgid "Python apps can be translated, too"'
+check_potfile 'msgid "Regardless of single- or double-quotes"'
+
+# From the schema file
+check_potfile "Just a test"
+check_potfile "No really, it's just a test."
+
+# Needed for loading the installed schemas, as it's not standard glib path
+export GSETTINGS_SCHEMA_DIR="${installdir}/share/glib-2.0/schemas"
+
+# This binary is a test suite that will exit this outer BASH script if it fails
+G_MESSAGES_DEBUG=all "${installdir}/usr/bin/fooapp"

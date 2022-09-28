@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# autopkgtest check: Build a trivial project that uses the
+# find_package(GSettings) macro.
+# (C) 2017 Canonical Ltd.
+
+set -euo pipefail
+IFS=$'\n\t'
+
+tempdir=$(mktemp --tmpdir="${AUTOPKGTEST_TMP:-/tmp}" -d)
+trap "rm -rf $tempdir" 0 INT QUIT ABRT PIPE TERM
+
+demodir="$(pwd)/examples/gsettings-demo"
+srcdir="${tempdir}/source"
+bindir="${tempdir}/build"
+installdir="${tempdir}/install"
+
+cp -r "${demodir}" "${srcdir}"
+mkdir -p "${bindir}"
+
+DEFAULT_UUID=$(uuidgen)
+
+# Move into bindir temporarily
+(
+  cd "${bindir}"
+  cmake "${srcdir}" -DCMAKE_INSTALL_PREFIX="${installdir}" -DGSETTINGS_LOCALINSTALL=1 -DGSETTINGS_COMPILE=1 -DDEFAULT_UUID_VALUE=${DEFAULT_UUID}
+  make
+  make ARGS+="--output-on-failure" test
+  make VERBOSE=1 install
+)
+
+### Test the schemas
+check_schema() {
+    VALUE=$(gsettings get $1 $2)
+    EXPECTED=${3:-0}
+
+    echo -n "/schema/$1/$2: "
+
+    if [ "${VALUE}" == "${EXPECTED}" ]; then
+        echo "OK"
+    else
+        echo "FAILED"
+        echo "Generated schema is wrong."
+        echo "\tActual:   ${VALUE}"
+        echo "\tExpected: ${EXPECTED}"
+        return 1
+    fi
+}
+
+# Verify the built schemas
+export GSETTINGS_SCHEMA_DIR="${bindir}"
+check_schema "com.canonical.cmake-extras.generated-test" "install-id" "'${DEFAULT_UUID}'"
+check_schema "com.canonical.cmake-extras.static-test" "use-gsettings" "false"
+
+# Verify the installed schemas
+export GSETTINGS_SCHEMA_DIR="${installdir}/share/glib-2.0/schemas"
+check_schema "com.canonical.cmake-extras.generated-test" "install-id" "'${DEFAULT_UUID}'"
+check_schema "com.canonical.cmake-extras.static-test" "use-gsettings" "false"

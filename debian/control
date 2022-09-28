@@ -1,0 +1,40 @@
+Source: cmake-extras
+Section: devel
+Priority: optional
+Maintainer: Mike Gabriel <sunweaver@debian.org>
+Uploaders:
+ Ayatana Packagers <pkg-ayatana-devel@lists.alioth.debian.org>,
+ Debian CMake Team <pkg-cmake-team@lists.alioth.debian.org>,
+ Debian UBports Team <team+ubports@tracker.debian.org>,
+Build-Depends: cmake,
+               debhelper-compat (= 13),
+Standards-Version: 4.6.0
+Rules-Requires-Root: no
+Homepage: https://gitlab.com/ubports/core/cmake-extras/
+Vcs-Git: https://salsa.debian.org/debian-ayatana-team/cmake-extras.git
+Vcs-Browser: https://salsa.debian.org/debian-ayatana-team/cmake-extras
+
+Package: cmake-extras
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends},
+         cmake (>= 3.1),
+         pkg-config,
+         python3,
+Suggests: googletest (>= 1.10.0.20201025),
+          libgtest-dev,
+Description: Extra CMake utility modules
+ CMake modules which are used for Ubuntu development. In Debian, this package is
+ helpful when porting Ubuntu originated software to Debian.
+ .
+ Included CMake modules:
+ .
+   - copyright testing
+   - coverage testing
+   - building gtest
+   - doxygen documentation
+   - code formatting
+   - GDbus, GMock and GSettings modules
+   - intltool helpers
+   - QML plugin helper
+   - and several more...

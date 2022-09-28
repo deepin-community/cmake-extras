@@ -1,0 +1,25 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: cmake-extras
+Source: https://gitlab.com/ubports/core/cmake-extras/
+
+Files: *
+Copyright: Canonical Ltd.
+License: LGPL-3
+
+Files: src/gcovr/gcovrConfig.cmake
+ src/Lcov/LcovConfig.cmake
+ src/CoverageReport/EnableCoverageReport.cmake
+Copyright: 2010 Johannes Wienke <jwienke@techfak.uni-bielefeld.de>
+License: LGPL-3
+
+License: LGPL-3
+ This file may be licensed under the terms of the
+ GNU Lesser General Public License Version 3 (the ``LGPL'').
+ .
+ Software distributed under the License is distributed
+ on an ``AS IS'' basis, WITHOUT WARRANTY OF ANY KIND, either
+ express or implied. See the LGPL for the specific language
+ governing rights and limitations.
+ .
+ On Debian/Ubuntu systems, the full text of the LGPL v3 can be found in
+ `/usr/share/common-licenses/LGPL-3'

@@ -1,0 +1,13 @@
+Description: Add #include of <locale.h> to examples/intltool-demo/src/main.cpp, fixing autopkgtest.
+Author: Michael Hudson-Doyle <michael.hudson@ubuntu.com>
+
+--- a/examples/intltool-demo/src/main.cpp
++++ b/examples/intltool-demo/src/main.cpp
+@@ -2,6 +2,7 @@
+ #include <gio/gio.h>
+ #include <glib.h>
+ #include <libintl.h>
++#include <locale.h>
+ 
+ using namespace std;
+ 

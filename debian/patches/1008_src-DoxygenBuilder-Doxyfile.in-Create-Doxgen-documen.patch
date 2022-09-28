@@ -1,0 +1,28 @@
+From 75ad3c5115ec9d28e21e56c3f5c65bafd1958c6c Mon Sep 17 00:00:00 2001
+From: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Date: Mon, 8 Nov 2021 18:52:30 +0100
+Subject: [PATCH] src/DoxygenBuilder/Doxyfile.in: Create Doxgen documentations
+ with FULL_PATH_NAMES set to NO. Helps stripping off the <<PKGBUILDIR>> from
+ documentation files during package builds.
+
+Signed-off-by: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+---
+ src/DoxygenBuilder/Doxyfile.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/DoxygenBuilder/Doxyfile.in b/src/DoxygenBuilder/Doxyfile.in
+index 419e40c..83a9035 100644
+--- a/src/DoxygenBuilder/Doxyfile.in
++++ b/src/DoxygenBuilder/Doxyfile.in
+@@ -140,7 +140,7 @@ INLINE_INHERITED_MEMB  = NO
+ # shortest path that makes the file name unique will be used
+ # The default value is: YES.
+ 
+-FULL_PATH_NAMES        = YES
++FULL_PATH_NAMES        = NO
+ 
+ # The STRIP_FROM_PATH tag can be used to strip a user-defined part of the path.
+ # Stripping is only done if one of the specified strings matches the left-hand
+-- 
+2.30.2
+

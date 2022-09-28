@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# autopkgtest check: Build a trivial project that uses the
+# find_package(GDbus) macro.
+# (C) 2017 Canonical Ltd.
+
+set -euo pipefail
+IFS=$'\n\t'
+
+tempdir=$(mktemp --tmpdir="${AUTOPKGTEST_TMP:-/tmp}" -d)
+trap "rm -rf $tempdir" 0 INT QUIT ABRT PIPE TERM
+
+srcdir="$(pwd)/examples/gdbus-demo"
+bindir="${tempdir}/build"
+installdir="${tempdir}/install"
+
+mkdir -p "${bindir}"
+
+echo -e "#!/bin/bash\nmake ARGS+=\"--output-on-failure\" test\n" > ${bindir}/run-gdbus-tests.sh
+chmod a+x ${bindir}/run-gdbus-tests.sh
+
+# Move into bindir temporarily
+(
+  cd "${bindir}"
+  cmake "${srcdir}" -DCMAKE_INSTALL_PREFIX="${installdir}"
+  make
+  dbus-test-runner --bus-type=system -t ./run-gdbus-tests.sh
+)

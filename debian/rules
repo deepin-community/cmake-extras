@@ -1,0 +1,6 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --fail-missing
+
+get-orig-source:
+	uscan --noconf --force-download --rename --download-current-version --destdir=..
