@@ -1,3 +1,31 @@
+cmake-extras (1.7-2) unstable; urgency=medium
+
+  * debian/patches: Add patch to workaround cmake bug (closes: #1058503)
+    (closes: #1058341)
+  * debian/control: Add myself as uploader
+
+ -- Marius Gripsgard <mariogrip@debian.org>  Tue, 30 Jan 2024 01:28:47 +0100
+
+cmake-extras (1.7-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+    + Bump Standards-Version: to 4.6.2. No changes needed
+  * debian/copyright:
+    + Add auto-generated copyright.in template file for later tracking of
+      copyright changes.
+    + Update copyright attributions.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 19 Nov 2023 16:42:49 +0100
+
+cmake-extras (1.6-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/patches:
+    + Drop patches 1002, 1003, 1005, 1006 and 1007. All integrated upstream.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 02 Feb 2022 14:02:57 +0100
+
 cmake-extras (1.5-8) unstable; urgency=medium
 
   * debian/patches:

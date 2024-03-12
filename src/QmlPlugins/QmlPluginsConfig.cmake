@@ -2,7 +2,7 @@
 # target before loading this plugin.
 
 if(NOT TARGET qmlplugindump)
-    find_program(qmlplugindump_exe qmlplugindump)
+    find_program(qmlplugindump_exe qmlplugindump HINTS /usr/lib/qt5/bin/)
 
     if(NOT qmlplugindump_exe)
       message(FATAL_ERROR "Could not locate qmlplugindump.")
