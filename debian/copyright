@@ -2,15 +2,123 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: cmake-extras
 Source: https://gitlab.com/ubports/core/cmake-extras/
 
-Files: *
-Copyright: Canonical Ltd.
+Files: .gitignore
+ AUTHORS
+ CMakeLists.txt
+ ChangeLog
+ README.md
+ examples/copyrighttest-demo/no_copyright.cpp
+ examples/copyrighttest-demo/no_copyright.h
+ examples/doxygenbuilder-demo/CMakeLists.txt
+ examples/doxygenbuilder-demo/doc/CMakeLists.txt
+ examples/doxygenbuilder-demo/doc/pages/mainpage.dox
+ examples/doxygenbuilder-demo/examples/example-1.cpp
+ examples/doxygenbuilder-demo/src/my-namespace/my-class.h
+ examples/findgmock-demo/CMakeLists.txt
+ examples/findgmock-demo/test-suite.cpp
+ examples/gdbus-demo/CMakeLists.txt
+ examples/gdbus-demo/main.cpp
+ examples/gdbus-demo/org.freedesktop.DBus.xml
+ examples/gsettings-demo/CMakeLists.txt
+ examples/gsettings-demo/generated.gschema.xml.in
+ examples/gsettings-demo/static.gschema.xml
+ examples/includechecker-demo/CMakeLists.txt
+ examples/includechecker-demo/include/demolib/bad/bad-header.h
+ examples/includechecker-demo/include/demolib/good-header.h
+ examples/includechecker-demo/include/demolib/internal/bar.h
+ examples/includechecker-demo/test/CMakeLists.txt
+ examples/includechecker-demo/test/demolib/CMakeLists.txt
+ examples/includechecker-demo/test/demolib/bad/bad-header-test.cpp
+ examples/includechecker-demo/test/demolib/good-header-test.cpp
+ examples/intltool-demo/CMakeLists.txt
+ examples/intltool-demo/po/CMakeLists.txt
+ examples/intltool-demo/po/POTFILES.in.in
+ examples/intltool-demo/po/en_AU.po
+ examples/intltool-demo/po/intltool-demo.pot
+ examples/intltool-demo/python/CMakeLists.txt
+ examples/intltool-demo/python/other_language_translations.py
+ examples/intltool-demo/src/CMakeLists.txt
+ examples/intltool-demo/src/foo.ini.in
+ examples/intltool-demo/src/main.cpp
+ examples/intltool-demo/src/translated.gschema.xml.in
+ examples/intltool-demo/test/test.cpp
+ src/CoverageReport/CoverageReportConfig.cmake
+ src/DoxygenBuilder/Doxyfile.in
+ src/FormatCode/unity-api.astyle
+ src/FormatCode/unity-api.clang-format
+ src/GSettings/GSettingsConfig.cmake
+ src/GdbusCodegen/GdbusCodegenConfig.cmake
+ src/IncludeChecker/deps
+ src/QmlPlugins/QmlPluginsConfig.cmake
+Copyright: 2013-2017, Canonical Ltd
+License: LGPL-3
+Comment:
+ Missing license headers, assuming copyright holdership and
+ license from majority of other files and what Canonical Ltd.
+ used to ship in the original d/copyright file.
+
+Files: examples/copyrighttest-demo/CMakeLists.txt
+ examples/copyrighttest-demo/copyright.cpp
+ examples/copyrighttest-demo/copyright.h
+ src/CopyrightTest/check_copyright.sh
+ src/CopyrightTest/CopyrightTestConfig.cmake
+ src/DoxygenBuilder/DoxygenBuilderConfig.cmake
+ src/FormatCode/formatcode.in
+ src/GDbus/GDbusConfig.cmake
+ src/GMock/GMockConfig.cmake
+ src/IncludeChecker/include_checker.py
+ src/Intltool/IntltoolConfig.cmake
+Copyright: 2013, Canonical Ltd
+  2013-2016, Canonical Ltd
+  2014, Canonical Ltd
+  2015, Canonical Ltd
+  2017, Canonical Ltd
 License: LGPL-3
 
-Files: src/gcovr/gcovrConfig.cmake
+Files: src/FormatCode/FormatCodeConfig.cmake
+ src/FormatCode/formatcode_common.cmake
+ src/FormatCode/formatcode_format.cmake.in
+ src/FormatCode/formatcode_test.cmake.in
+ src/IncludeChecker/IncludeCheckerConfig.cmake
+Copyright: 2016, Canonical Ltd
+  2017, Canonical Ltd
+License: LGPL-3+
+
+Files: src/CoverageReport/EnableCoverageReport.cmake
  src/Lcov/LcovConfig.cmake
- src/CoverageReport/EnableCoverageReport.cmake
-Copyright: 2010 Johannes Wienke <jwienke@techfak.uni-bielefeld.de>
+ src/gcovr/gcovrConfig.cmake
+Copyright: 2010, Johannes Wienke <jwienke at techfak dot uni-bielefeld dot de>
+  2011, Johannes Wienke <jwienke at techfak dot uni-bielefeld dot de>
+License: LGPL-3+
+
+Files: src/Vala/ValaConfig.cmake
+Copyright: Přemysl Janouch 2011
+License: BSD-2-clause
+
+Files: src/GObjectIntrospection/GObjectIntrospectionConfig.cmake
+Copyright: 2010, Pino Toscano, <pino@kde.org>
+License: BSD-2-clause
+Comment:
+ Exact license version is missing assuming CMake license.
+
+Files: debian/*
+Copyright: 2013-2017, Canonical Ltd.
+  2014-2023, Mike Gabriel <sunweaver@debian.org>
 License: LGPL-3
+
+Files: debian/tests/copyrighttest
+ debian/tests/doxygenbuilder
+ debian/tests/findgmock
+ debian/tests/gdbus
+ debian/tests/gsettings
+ debian/tests/includechecker
+ debian/tests/intltool
+Copyright: 2016, Canonical Ltd.
+  2017, Canonical Ltd.
+License: LGPL-3
+Comment:
+ No licence in file headers, assuming Canonical Ltd.'s
+ original cmake-extras license.
 
 License: LGPL-3
  This file may be licensed under the terms of the
@@ -21,5 +129,50 @@ License: LGPL-3
  express or implied. See the LGPL for the specific language
  governing rights and limitations.
  .
+ You should have received a copy of the LGPL along with this
+ program. If not, go to http://www.gnu.org/licenses/lgpl.html
+ or write to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ .
  On Debian/Ubuntu systems, the full text of the LGPL v3 can be found in
  `/usr/share/common-licenses/LGPL-3'
+
+License: LGPL-3+
+ This file may be licensed under the terms of the
+ GNU Lesser General Public License Version 3 (the ``LGPL''),
+ or (at your option) any later version.
+ .
+ Software distributed under the License is distributed
+ on an ``AS IS'' basis, WITHOUT WARRANTY OF ANY KIND, either
+ express or implied. See the LGPL for the specific language
+ governing rights and limitations.
+ .
+ You should have received a copy of the LGPL along with this
+ program. If not, go to http://www.gnu.org/licenses/lgpl.html
+ or write to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ .
+ On Debian/Ubuntu systems, the full text of the LGPL v3 can be found in
+ `/usr/share/common-licenses/LGPL-3'
+
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ``AS IS''
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+ OF SUCH DAMAGE.

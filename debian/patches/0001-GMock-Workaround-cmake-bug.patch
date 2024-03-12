@@ -1,0 +1,46 @@
+From 7132b262fc92b20ae4e8d13d1c51ecb8604293f4 Mon Sep 17 00:00:00 2001
+From: Marius Gripsgard <mariogrip@debian.org>
+Date: Tue, 30 Jan 2024 01:02:25 +0100
+Subject: [PATCH] GMock: Workaround cmake bug
+
+I have no idea what is going on here, but adding the gmock/gtest
+libraries twice seems to fix the issue where cmake does not wait for
+gmock to be done building. This causes a race, but adding them twice
+fixes this, this is harmless but confusing.
+---
+ src/GMock/GMockConfig.cmake | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/src/GMock/GMockConfig.cmake b/src/GMock/GMockConfig.cmake
+index f982352..6f44575 100644
+--- a/src/GMock/GMockConfig.cmake
++++ b/src/GMock/GMockConfig.cmake
+@@ -168,17 +168,17 @@ set_property(TARGET gmock_main PROPERTY IMPORTED_LOCATION ${findgmock_gmock_main
+ target_include_directories(gmock_main INTERFACE ${GMOCK_INCLUDE_DIRS})
+ target_link_libraries(gmock_main INTERFACE gmock)
+ 
+-set(GTEST_LIBRARIES gtest)
+-set(GTEST_MAIN_LIBRARIES gtest_main)
+-set(GMOCK_LIBRARIES gmock_main gmock)
++set(GTEST_LIBRARIES gtest gtest)
++set(GTEST_MAIN_LIBRARIES gtest_main gtest_main)
++set(GMOCK_LIBRARIES gmock_main gmock gmock_main gmock)
+ set(GTEST_BOTH_LIBRARIES ${GTEST_LIBRARIES} ${GTEST_MAIN_LIBRARIES})
+ 
+ # Old names
+-set(GTEST_LIBRARY gtest)
+-set(GTEST_MAIN_LIBRARY gtest_main)
+-set(GMOCK_LIBRARY gmock)
+-set(GMOCK_MAIN_LIBRARY gmock_main)
+-set(GMOCK_BOTH_LIBRARIES gmock_main gmock)
++set(GTEST_LIBRARY gtest gtest)
++set(GTEST_MAIN_LIBRARY gtest_main gtest_main)
++set(GMOCK_LIBRARY gmock gmock)
++set(GMOCK_MAIN_LIBRARY gmock_main gmock_main)
++set(GMOCK_BOTH_LIBRARIES gmock_main gmock gmock_main gmock)
+ # This used to be "${GTEST_BOTH_LIBRARIES} ${GMOCK_BOTH_LIBRARIES}", but
+ # I understand that you're not supposd to include gtest_main and gmock_main
+ # at the same time.
+-- 
+2.43.0
+

@@ -1,0 +1,857 @@
+2023-10-15 Mike Gabriel
+
+        * Release 1.7 (HEAD -> main, tag: 1.7)
+
+2022-11-21 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/fight-lp1986665' into 'main'
+          (99aab45)
+
+2022-11-22 Ratchanan Srirattanamet
+
+        * GMock: find pre-packaged GTest only after we cannot find sources
+          (d4183c1)
+
+2022-10-10 Mike Gabriel
+
+        * Merge branch 'pr/add-g-dbus-codegen' into 'main' (0a7595d)
+
+2022-10-10 Robert Tari
+
+        * Add GdbusCodegen (fea173a)
+
+2022-03-11 Marius Gripsgard
+
+        * Merge branch 'gmock-cmake' into 'main' (5f56466)
+
+2022-01-12 Dalton Durst
+
+        * Back to development (1e9b2c6)
+        * Release cmake-extras 1.6 (a7bfb6f) (tag: 1.6)
+
+2021-04-04 Luca Weiss
+
+        * GMock: Use GMock targets from CMake if possible (548ab2d)
+        * GMock: Extract version detection code into function (a3cdd9a)
+
+2021-05-28 Rodney
+
+        * Merge branch 'personal/peat-psuwit/gmock-old-names' into 'main'
+          (87ffd0d)
+
+2021-05-28 Ratchanan Srirattanamet
+
+        * GMock: add old variable names (a3a8770)
+
+2021-05-12 Rodney
+
+        * Merge branch 'personal/peat-psuwit/gtest-var-name' into 'main'
+          (6833785)
+
+2021-05-12 Ratchanan Srirattanamet
+
+        * GMock: rename pkg_check_modules variable name (a81e565)
+
+2021-05-11 Rodney
+
+        * Merge branch 'personal/peat-psuwit/gmock-imported' into 'main'
+          (102d2f1)
+
+2021-05-11 Ratchanan Srirattanamet
+
+        * GMock: switch from INTERFACE to IMPORTED library (b7bd24f)
+
+2021-05-06 Rodney
+
+        * Merge branch 'personal/peat-psuwit/gmock-as-shared-lib' into 'main'
+          (ecd9b3a)
+
+2021-04-15 Rodney
+
+        * Merge branch 'pr/fix-gmock-location' into 'main' (4a73b17)
+
+2021-04-15 Robert Tari
+
+        * Fix GMock location search (c0fb302)
+
+2021-04-13 Marius Gripsgard
+
+        * Merge branch 'qmlplugindump' into 'main' (8799c5b)
+
+2021-04-04 Luca Weiss
+
+        * Add search hint for qmlplugindump (eaf6644)
+
+2021-04-01 Ratchanan Srirattanamet
+
+        * GMock: support building GMock as shared libs (3b9322c)
+        * GMock: make sure gmock_main is independent (567bfd9)
+
+2021-03-28 Marius Gripsgard
+
+        * Merge branch 'mr/sync-with-GMock.config-from-Debian' into 'main'
+          (4fd8a40)
+
+2021-03-22 Rodney
+
+        * Merge branch 'personal/peat-psuwit/start-building-master' into
+          'main' (15da831)
+        * Merge branch 'personal/peat-psuwit/bionic-patches' into 'main'
+          (27400e5)
+
+2019-07-24 Rodney Dawes
+
+        * Get more complete gcc version info. (16a60b0)
+
+2021-03-22 Ratchanan Srirattanamet
+
+        * Move Jenkinsfile to debian/ per the new guideline (3b00744)
+        * Update Jenkinsfile to use the shared library (d54df9f)
+        * Update Debian changelog and bump version (01e2108)
+
+2021-03-04 Marius Gripsgard
+
+        * Merge branch 'pr/add-gi-and-vala' into 'master' (addbf80)
+
+2021-02-04 Robert Tari
+
+        * Add gobject-introspection and vala (0fd0f0b)
+
+2020-10-24 Mike Gabriel
+
+        * debian/tests/control: Require pkg-config and libgtest-dev for gmock
+          autopkgtest. (c405e6c)
+        * src/GMock/GMockConfig.cmake: Fix GMock detection for googletest
+          1.10.0. (e27ac2a)
+
+2020-09-28 Marius Gripsgard
+
+        * Merge branch 'gmock-fixes' into 'master' (1842866)
+
+2020-08-17 Marius Gripsgard
+
+        * [GMock] Add support for >=1.8.1 and provide version varable
+          (9a3d444)
+        * git push origin "master"Merge branch 'mwhudson-patch-1' (f6b455d)
+        * Merge branch 'patch-1' of https://github.com/mwhudson/cmake-extras
+          into mwhudson-patch-1 (850b95f)
+
+2020-08-04 Michael Hudson-Doyle
+
+        * Add #include of <locale.h> to examples/intltool-demo/src/main.cpp
+          (490c8b0)
+
+2020-02-25 Marius Gripsgard
+
+        * Cleanup bzr ashes (a90eeed) (tag: 1.5)
+
+2019-02-18 Rodney
+
+        * Merge pull request #10 from ubports/master_-_clean-coverage
+          (4db1e08)
+
+2019-02-18 Rodney Dawes
+
+        * Move clean-coverage definition. (ccae5ad)
+
+2018-10-02 Rodney
+
+        * Merge pull request #5 from ubports/bionic (f50570d)
+
+2018-10-02 Rodney Dawes
+
+        * Use the u-t-sounds Jenkinsfile. (658abce)
+
+2018-10-01 Rodney Dawes
+
+        * Remove arm references. (c3f2115)
+        * Bump the version. (8f0095d)
+        * Add a Jenkinsfile (1aa1b38)
+
+2018-09-29 Rodney
+
+        * Merge pull request #4 from z3ntu/patch-1 (a0aaadf)
+
+2018-09-29 Luca Weiss
+
+        * Fix error message in QmlPluginsConfig.cmake (fd96066)
+
+2018-09-20 Rodney Dawes
+
+        * Enable doxyqml by default. (a711a56)
+
+2018-05-30 Florian Leeber
+
+        * Merge pull request #1 from ubports/vanyasem-patch-1 (820b661)
+
+2018-05-29 Ivan Semkin
+
+        * Add LICENSE (2d64028)
+
+2017-04-16 michihenning
+
+        * Merge pull request #1 from bregma/add-readme (9d76947)
+
+2017-04-15 Stephen M. Webb
+
+        * README.md: new file (d621974)
+
+2017-04-05 Bileto Bot
+
+        * Releasing 1.4+17.04.20170405-0ubuntu1 (a03bc13)
+
+2017-04-05 Pete Woods
+
+        * Intltool filtering should filter out files that match any regex.
+          (faa1f9f)
+
+2017-04-05 Larry Price
+
+        * Allow passing in an argument to specify alternative programming
+          language to xgettext. (LP: #1675865) (e4cb3dd)
+
+2017-04-05 Bileto Bot
+
+        * Drop deprecated modules now that no-one is using them any more,
+          fixing bug (LP: #1563573). (333f0e7)
+
+2017-04-03 Pete Woods
+
+        * Merge fix-filtering branch to avoid conflicts (72eb8cf)
+        * Drop deprecated macros (14eeaf8)
+
+2017-03-28 Larry Price
+
+        * Test alternative language (python) translations (39f1ff7)
+
+2017-03-27 Larry Price
+
+        * Add an additional filter item (breaks old test, fixed by this MP)
+          (124fe00)
+
+2017-03-24 Larry Price
+
+        * Add option to check multiple programming langauges with xgettext
+          (ea248fb)
+        * Filter out items that match any regex (e73dc3b)
+
+2017-03-10 Bileto Bot
+
+        * Releasing 1.3+17.04.20170310-0ubuntu1 (1c41e1d)
+        * Make GDBus source name generation work like more conventional
+          macros. (9fe3c46)
+
+2017-03-10 Pete Woods
+
+        * Switch to conventional generated source appending for GDbus macros.
+          (0702497)
+
+2017-02-28 Bileto Bot
+
+        * Releasing 1.2+17.04.20170228-0ubuntu1 (916f3e8)
+        * Add function to compile GSettings schemas. (LP: #1664714.
+          Handle merging translations into non-ini file types. (LP:
+          #1664325);  Append file globs for translation template
+          function. (LP: #1664345);  Use already unique translation
+          template as target name.;  Add a GDbus module for using
+          gdbus-codegen in cmake projects. (3a52a89)
+
+2017-02-28 Rodney Dawes
+
+        * Add a module for using gdbus-codegen code with cmake. (5604735)
+        * Don't use the gettext unique target magic for pot files. (e2a366f)
+        * Append file globs rather than resetting the variable. (LP:
+          #1664345) (6ead42e)
+        * Handle other style options for merging, and no translations for xml
+          style. (LP: #1664325) (77242a5)
+        * Refactor GSettings module to provide a compile_schemas macro. (LP:
+          #1664714) (c41715e)
+        * Cleanups per review. (5480cf4)
+        * Quote the target names. (84c84b5)
+        * Initialize the strings. (3443207)
+
+2017-02-27 Rodney Dawes
+
+        * Bump the version to 1.2. (880fbed)
+        * Fix typo. (ad4ea0a)
+        * Add BYPRODUCTS so the generated sources get flagged as such.
+          (1c1b8bf)
+
+2017-02-24 Rodney Dawes
+
+        * Add a module for using gdbus-codegen code with cmake. (040ee8a)
+
+2017-02-22 Rodney Dawes
+
+        * Don't use the gettext unique target magic for pot files. (aab6dbd)
+        * Append file globs rather than resetting the variable. (163473a)
+        * Fix indentation. (554cdf1)
+        * Fix the tests. (33ad663)
+        * Merge up with more-gsettings. (c91f238)
+        * Don't comment out the trap line. (d0ec9af)
+        * Fix issues with gsettings test command. Always need to copy the
+          schema file to binary dir. (454ac68)
+        * Fix comment typo. (a82e8e3)
+        * Restore the pot file. (f79620d)
+        * Restore building properly. Install and compile the schemas for the
+          dep8 test. (6584e1d)
+
+2017-02-21 Rodney Dawes
+
+        * Merge up more-gsettings fixes. (abe8c8c)
+        * Need to find_package in the install code segment. (61e7c72)
+        * Merge up gsettings fixes. (3b88008)
+        * Build the merge targets always in the example demo. (7243cc9)
+        * Run make test in the dep8 test too. (fd9cb4a)
+        * Ensure a target exists for gschema files. Add the validation as a
+          test rather than a target. (20be2f7)
+
+2017-02-17 Rodney Dawes
+
+        * Need gettext now for gsettings. (84c41a3)
+        * Reduce unrelated changes. (f1b58dd)
+        * Remove unused variable. (9df0446)
+        * Merge gsettings fixes. (d22afa8)
+        * Switch back to function with custom command and target. (af9c9b7)
+        * Rename the validation target and add a comment to it. Need to get
+          the property for schemas compiling depends. (2908664)
+        * Merge up gsettings changes. (e5fe61a)
+        * Add some more newlines. (a5b0b39)
+
+2017-02-16 Rodney Dawes
+
+        * Add ALL to the validation target too. (a0668fa)
+        * Convert the macros to functions and use targets. (9c0e702)
+        * Quote the variables in the gsettings test. (371406d)
+
+2017-02-15 Rodney Dawes
+
+        * Refactor INTLTOOL_MERGE_TRANSLATIONS into a macro. Handle other
+          style options for merging, and no translations for xml
+          style. (3edea2e)
+        * Must use DESTINATION with file COPY. (76c3f50)
+        * Refactor GSettings module to provide a compile_schemas macro.
+          (f727951)
+
+2017-02-13 Bileto Bot
+
+        * Releasing 1.2+17.04.20170213-0ubuntu1 (1c3be9b)
+        * Add autopkgtest for gsettings macro.;  Handle generated gschema
+          files. (LP: #1661686) (e64afba)
+
+2017-02-13 Rodney Dawes
+
+        * Fix the version number. (658bc2e)
+
+2017-02-10 Rodney Dawes
+
+        * Add changelog entry. (e5a99aa)
+        * Make the gsettings test work and verify the results. (89ddd79)
+        * Check for gsettings schema file in binary dir first. Add
+          autopkgtest for testing the gsettings module. (5589f87)
+
+2017-02-09 Bileto Bot
+
+        * Releasing 1.1+17.04.20170209-0ubuntu1 (3073762)
+        * Add FILTER argument to intltool macros. (d2b6d0b)
+        * Add IncludeChecker macro. (6f2754f)
+
+2017-02-09 Pete Woods
+
+        * Remove unnecessary custom check target (84f28e8)
+        * Add a bunch more test scenarios by adding CMake parameters
+          (af65a48)
+        * Fix missing comma in debian/tests/control (85879dd)
+        * Run pep8 and pyflakes on include_checker.py, and fix the errors
+          (df4c4f6)
+
+2017-02-08 Pete Woods
+
+        * Add FILTER argument to intltool macros. (74b46e7)
+        * Add IncludeChecker macros (37f2dde)
+
+2017-01-10 Bileto Bot
+
+        * Releasing 1.0+17.04.20170110.1-0ubuntu1 (ed06d8d)
+
+2017-01-10 Pete Woods
+
+        * Add autopkgtest for DoxygenBuilder macros (803c0ca)
+        * Add autopkgtest for intltool macros (1702caa)
+        * Add autopkgtest for DoxygenBuilder (279f33f)
+
+2017-01-09 Pete Woods
+
+        * Add language-pack-en dependency (13299fd)
+        * Add first autopkgtest for intltool macros (0015ebe)
+
+2016-12-08 Bileto Bot
+
+        * Releasing 0.10+17.04.20161208.1-0ubuntu1 (7c1bf5e)
+        * Migrate all modules to unversioned cmake directory. (15196fc)
+
+2016-12-08 James Henstridge
+
+        * Move coverage report code to use find_package(CoverageReport)
+          rather than include(EnableCoverageReport). (c20dce1)
+        * Fix typo in deprecation message. (4e7c7d8)
+
+2016-12-07 Pete Woods
+
+        * Migrate cmake modules into unversioned cmake directory (cd0ff8e)
+
+2016-12-06 James Henstridge
+
+        * Tweak deprecation message a bit. (dcc53ca)
+
+2016-12-05 James Henstridge
+
+        * Move initial setup code to CoverageReportConfig.cmake, and ensure
+          CoverageReport_FOUND is set: this means
+          find_package(CoverageReport REQUIRED) should fail if none
+          of the tools are available. (07ddd0a)
+        * Move coverage report code to use find_package(). (838474c)
+
+2016-12-02 Bileto Bot
+
+        * Releasing 0.9+17.04.20161202.1-0ubuntu1 (5161455)
+        * Added CopyrightTest module. (d2ccb40)
+
+2016-12-02 James Henstridge
+
+        * Move some of the modules out of ${CMAKE_ROOT} and in to the
+          unversioned /usr/share/cmake/ directory. (67ebc24)
+        * Add an autopkgtest for the find_package(GMock) macro. (19c3eff)
+
+2016-12-02 Rodney Dawes
+
+        * Simplify the INSTALL_TRANSLATIONS command to avoid regenerating po
+          files. (LP: #1645856) (9e8a866)
+
+2016-12-02 Michi Henning
+
+        * Use ctest -V and set -e. (3ee7de4)
+        * Adjustment for different behavior of licensecheck on xenial, where
+          it won't look at CMakeLists.txt by default. (4a2e7b8)
+        * Fixes for autopkg tests that fail due to broken licensecheck on
+          zesty. (aa3eac7)
+
+2016-12-01 Michi Henning
+
+        * Review comments from James. (2b5417c)
+        * Separate deps for autopkg tests. (42d1122)
+        * Fixed lintian warning. (50ce7e5)
+        * Removed redundant explicitly listed files. (5a980ce)
+        * And another test without IGNORE_DIR. (58eb541)
+        * Added one more test. (ad7fb57)
+        * Added autopkg tests. (fa59dfe)
+        * Merged lp:~jamesh/cmake-extras/gmock-autopkgtest (f0cc58e)
+        * Re-ordered stanzas to put the specific one at the end. Files: now
+          catches everything in the general stanza. (2087c8c)
+        * Added INCLUDE_PATTERN. (7007f20)
+        * Some review comments from James. (fd3257c)
+        * Added doc. Added .bzrignore. Merged dependent branch. Updated
+          changelog. (0d3cc1d)
+        * Now works with one level of escaping. (cc15f3f)
+        * Copyright test. Still need two levels of escaping for regex meta
+          characters. (f6dede3)
+
+2016-11-30 James Henstridge
+
+        * Update copyright file for moved files. (1e20160)
+        * Move Find*.cmake modules to non-versioned cmake directory where
+          they can be discovered by the "config" mode of
+          find_package(). (c6ca863)
+        * Add autopkgtest for find_package(GMock) that tries to build the
+          example project. (198116f)
+        * Add an example project that uses find_package(GMock) (07cc347)
+
+2016-11-29 Rodney Dawes
+
+        * Simplify the INSTALL_TRANSLATIONS command to avoid regenerating po
+          files. (c783289)
+
+2016-11-25 Bileto Bot
+
+        * Releasing 0.8+17.04.20161125-0ubuntu1 (0788c7c)
+        * More appropriate fix for gtest 1.8, backward compatible with 1.7.
+          (677913b)
+
+2016-11-25 Michi Henning
+
+        * Don't leak variables. (4c8e4af)
+
+2016-11-24 Michi Henning
+
+        * Updated changelog and bumped version. (bc558a6)
+        * Fixed incorrect include path and added missing dependencies for
+          parallel builds. (2813270)
+        * Better fix to deal with both 1.7 and 1.8 versions of gtest/gmock.
+          (54a33bb)
+
+2016-11-23 Bileto Bot
+
+        * Releasing 0.7+17.04.20161123.5-0ubuntu1 (1665237)
+
+2016-11-23 Michi Henning
+
+        * Fixes for gtest 1.8.0. (LP: #1644062) (LP: #1644062) (7c99540)
+        * [ Timo Jyrinki, Martin Pitt ];  Fix versioning for upper cmake
+          version [ Martin Pitt, Gianfranco Costamagna ];  Enforce a
+          particular cmake runtime dependency, because the installed
+            files have an hardcoded version directory, so we need to
+          no-change   rebuild at each new cmake release.;  Rebuild
+          against new cmake 3.7.;  No change rebuild for cmake 3.6
+          (LP: #1635613) (2103a9e)
+        * Fix typo. (53a94fd)
+        * Fixes for libgtest-dev 1.8.0. (bfebde4)
+
+2016-05-13 CI Train Bot
+
+        * Releasing 0.7+16.04.20160513-0ubuntu1 (61d30b3)
+
+2016-05-13 Pete Woods
+
+        * Add optional `formatcode' test and rule for comparing code to, and
+          reformatting code to, a style guide standard. Approved by:
+          Pete Woods, Michi Henning (c4cb36e)
+        * Sync with distro (629e78e)
+        * Add formatcode module (f888a95)
+        * Sync with distro (81838db)
+
+2016-04-23 Charles Kerr
+
+        * updat the 'make formatcode' rule and formatcode test to use the new
+          filter (bb7e15d)
+        * when installing our modules, preserve the source files'
+          permissions. needed for the formatcode.in script.
+          (8dea393)
+        * fix formatting errors (39d1501)
+        * try adapting the formatcode filter from unity-scopes-api (ba5d67a)
+        * initial formatcode filter file. doesn't do anything yet. (e8e8332)
+        * use astyle's linux linefeed option instead of reformatting with sed
+          (c9d2fe6)
+
+2016-04-21 Charles Kerr
+
+        * in unity-api's clang-format, add 'SortIncludes: false' (2ed1a34)
+        * in unity-api's astyle config, enable --pad-oper since it's been
+          fixed in astyle 2.05 (4ca2567)
+        * tyop fix: s/atyle/astyle/ (5ac9fd6)
+
+2016-04-20 Pete Woods
+
+        * merge lp:~pete-woods/cmake-extras/formatcode-changes to use sed and
+          to include ParseArgs (1b311f4)
+        * Use sed, rather than dos2unix, which is installed by default
+          (7dd486f)
+        * Add parse arguments include (15327dd)
+
+2016-04-04 Charles Kerr
+
+        * Better public documentation. In internal funcs, unset config file
+          variables if the config file can't be found. (7150a62)
+        * in FormatCode, use CMakeParseArguments intead of global variables
+          (7850975)
+
+2016-03-25 Charles Kerr
+
+        * add rst documentation (12ab357)
+        * first draft of a 'formatcode' target + test to make it easier to
+          follow a house style (ed8a9c3)
+
+2016-02-15 CI Train Bot
+
+        * Releasing 0.6+16.04.20160215-0ubuntu1 (e7c9042)
+
+2016-02-15 Pete Woods
+
+        * Respect DESTINATION parameter in QmlPlugins.cmake
+          Fixes: #1539314
+          Approved by: Michał Sawicz (f03abe7)
+
+2016-02-08 Pete Woods
+
+        * Fix usage of completely wrong variable name (269c8a1)
+        * Respond again (f10114f)
+
+2016-02-03 Pete Woods
+
+        * Respond to review comments (d1239d8)
+
+2016-02-01 Pete Woods
+
+        * Update changelog (d4613f6)
+        * Add NO_INSTALL option to QmlPlugins.cmake (d5b9164)
+
+2016-01-29 Pete Woods
+
+        * Respect DESTINATION paramater in QmlPlugins.cmake (f6266e3)
+
+2016-01-13 CI Train Bot
+
+        * Releasing 0.5+16.04.20160113-0ubuntu1 (2b6ce6e)
+
+2016-01-13 Michi Henning
+
+        * Add -g to compile flags for gtest/gmock, otherwise we don't
+          necessarily get debug info if a test needs debugging with
+          gdb. Also added warning suppressions to stop the noise
+          from the build if the caller has additional warnings
+          enabled. Approved by: Pete Woods (78d9872)
+
+2015-10-26 CI Train Bot
+
+        * Releasing 0.5+16.04.20151026-0ubuntu1 (6f4bbe6)
+
+2015-10-26 Pete Woods
+
+        * No change rebuild for cmake 3.3 (37b5ae9)
+        * No change rebuild for cmake 3.3 (325dcb7)
+
+2015-10-21 CI Train Bot
+
+        * Releasing 0.5+15.10.20151021-0ubuntu1 (fce03c1)
+
+2015-10-21 Pete Woods
+
+        * Don't assume anything about the doxygen examples directory. Only
+          build docs when input files have changed.
+          Fixes: #1476487,
+          #1476488 (622ab52)
+        * Update changelog (8a3f60b)
+        * Don't assume anything about the doxygen examples directory. Only
+          build docs when input files have changed. (7c4996b)
+
+2015-10-20 CI Train Bot
+
+        * Releasing 0.4+15.10.20151020-0ubuntu1 (be39565)
+
+2015-10-20 Michi Henning
+
+        * Append with a space to compile flags (fixes lp:1469952).
+          Fixes:
+          #1469952 Approved by: Pete Woods (e450c57)
+
+2015-09-18 CI Train Bot
+
+        * Releasing 0.4+15.10.20150918-0ubuntu1 (4216c9c)
+
+2015-09-18 Pete Woods
+
+        * Fix failure when no COPYRIGHT_HOLDER argument provided (d0b3241)
+
+2015-09-17 Pete Woods
+
+        * Fix failure when no COPYRIGHT_HOLDER argument provided (316469e)
+
+2015-09-15 Michi Henning
+
+        * Fixed typo in gcc option. (3c380a7)
+
+2015-09-10 Michi Henning
+
+        * Added -g and warning suppression flags for gtest/gmock, so they
+          build without noise and keep debug info for when a test
+          needs debugging with gdb. (6fed1be)
+
+2015-07-31 Michi Henning
+
+        * Append with a space to compile flags (fixes lp:1469952). (b3bdf13)
+
+2015-06-22 CI Train Bot
+
+        * Releasing 0.4+15.10.20150622.1-0ubuntu1 (0e93734)
+
+2015-06-22 Michi Henning
+
+        * Fixes carried over from thumbnailer, made by James to correctly
+          filter XML coverage data, so we don't get tons of noise
+          about system files in the coverage report created by
+          Jenkins. Approved by: James Henstridge, Pete Woods, Michi
+          Henning (5a7cc43)
+        * Enable coverage with clang. If build type is coverage and clang is
+          used, clang emits coverage data in gcc format, so
+          gcovr/lcov can be used to generate the report. Approved
+          by: Pete Woods (0586ec0)
+
+2015-06-22 Pete Woods
+
+        * Install modules using CMake to allow detection of CMake version
+
+          Fixes: #1467030 (ec678bd)
+        * Add missing cmake build-depends (7d0a1ec)
+        * Fix intltool path exclude function (d120323)
+
+2015-06-19 Pete Woods
+
+        * Perform installation using CMake, to allow version-detection
+          (4ee8516)
+
+2015-06-18 CI Train Bot
+
+        * Releasing 0.4+15.10.20150618-0ubuntu1 (6516089)
+
+2015-06-18 Pete Woods
+
+        * Move scripts to cmake-3.2 dir for compatibility with Wily (c25e633)
+        * Install in cmake-3.2 dir for compatability with wily (6d61bf6)
+
+2015-05-29 Michi Henning
+
+        * More fixes made by James for thumbnailer: (f7aa3b2)
+
+2015-05-23 Michi Henning
+
+        * Fixes carried over from thumbnailer, made by James to correctly
+          filter XML coverage data, so we don't get tons of noise
+          about system files in the coverage report created by
+          Jenkins. (2341320)
+        * Merged parent branch. [ Pete Woods ];  Add QmlPlugin macros.;  Add
+          Doxygen macro added: UseDoxygen.Doxyfile.in
+          UseDoxygen.cmake;  Add GSettings macro added:
+          UseGSettings.cmake [ Michi Henning ];  Added
+          clean-coverage target (d8f8888)
+
+2015-05-13 CI Train Bot
+
+        * Releasing 0.4+15.04.20150513-0ubuntu1 (e97aea5)
+
+2015-05-13 Pete Woods
+
+        * Add Doxygen macro (717258b)
+        * Add GSettings macro (99eabc4)
+        * Enhancements to intltool and add qml plugin (6ddf841)
+
+2015-05-13 Michi Henning
+
+        * Added clean-coverage target (26f8c1a)
+
+2015-05-13 Pete Woods
+
+        * Address michi's review comments (8ed207b)
+
+2015-05-11 Michi Henning
+
+        * Enable coverage with Clang. (38b729f)
+
+2015-05-07 Pete Woods
+
+        * Get paranoid about paths (3c0b03a)
+        * Handle filters being longer than paths (076aade)
+        * Don't derive plugin install path from qmake, or it will break
+          cross-builds (1cecdfe)
+        * Tabs to spaces (101a36d)
+        * Fix typos (d42f079)
+        * Add Doxygen macro (8d04353)
+
+2015-05-06 Pete Woods
+
+        * Add GSettings macro (66217ca)
+
+2015-05-01 Michi Henning
+
+        * Added coverage flags to link phase for targets in the TESTS
+          parameter. (921968c)
+        * Added clean-coverage target. Added -g --coverage flags to compile
+          and link flags. (56b57e3)
+
+2015-04-28 Pete Woods
+
+        * Convenience function for QML plugins (85d06fb)
+        * Support COPYRIGHT_HOLDER and make POTFILE_TEMPLATE truly optional
+          (8bf5f7f)
+        * And QML plugin macros (9e936b8)
+
+2014-12-04 CI Train Bot
+
+        * Releasing 0.3+15.04.20141204-0ubuntu1 (e24ecf2)
+
+2014-12-04 Pete Woods
+
+        * Add intltool macros Approved by: Michał Sawicz, Marcus Tomlinson
+          (5e9c6ff)
+        * Add GMock support Approved by: Jussi Pakkanen (c00f5b8)
+
+2014-12-04 Daniel Holbach
+
+        * Move files to /usr/share/cmake-3.0.
+          Fixes: #1394648 Approved by:
+          Jussi Pakkanen (97a02c9)
+
+2014-12-04 Michael Vogt
+
+        * Sync changes from archive: (3241499)
+
+2014-12-04 Pete Woods
+
+        * More docs (1dcac31)
+        * Fix broken dependencies due to non-absolute paths, exlude files
+          from binary dir, include N_ in SDK defaults (f874980)
+
+2014-12-03 Pete Woods
+
+        * Support Ubuntu SDK defaults, and overriding the list of extensions
+          (1c1ea82)
+        * Use _PO_DIRECTORY variable (1a5d259)
+        * Remove debug code (63b0ebc)
+        * Parse the POTFILES.in, generate POTFILES.in, generate
+          Makefile.in.in (e42456f)
+        * Don't need this function (61526e4)
+        * Spelling (610d387)
+        * Improve docs (85bee20)
+        * Add QML and js (25e0cd3)
+
+2014-12-03 Michael Vogt
+
+        * Sync archive changes (619a4c0)
+
+2014-12-03 Pete Woods
+
+        * More docs (dafb6ea)
+        * Add Intltool macros (e62e460)
+        * Add docs and update debian version (c87feef)
+
+2014-12-02 Pete Woods
+
+        * GMock support (786298e)
+
+2014-11-20 Daniel Holbach
+
+        * fix install path (0b5b20e)
+
+2014-09-10 CI bot
+
+        * Releasing 0.2+14.10.20140910-0ubuntu1 (0139642)
+
+2014-09-10 Pete Woods
+
+        * Support plural forms (1bcad9e)
+
+2014-09-09 Pete Woods
+
+        * Support plural forms (db335ff)
+
+2014-09-05 CI bot
+
+        * Releasing 0.2+14.10.20140905-0ubuntu1 (1f49c5f)
+
+2014-09-05 Pete Woods
+
+        * Add translation macros (c4398a0)
+        * Use built in macros (44a9de4)
+        * Add XGettext translation macros (ebe8cb2)
+
+2014-05-27 CI bot
+
+        * Releasing 0.1+14.10.20140527-0ubuntu1 (c6b85ae)
+        * Null merge to release initial CMake extras. (5ca9dc8)
+
+2014-05-27 Allan LeSage
+
+        * Corect version number to 0.1. (fd4a731)
+        * Added debian/install for cmake macros. (3361a79)
+        * Added coverage macro files, added debian/copyright LGPL-3.
+          (1a959e7)
+        * Add control entry for cmake-extras, add debian/compat. (8f5c8a5)
+        * Initial commit. (c745f0c)

@@ -6,9 +6,10 @@ Uploaders:
  Ayatana Packagers <pkg-ayatana-devel@lists.alioth.debian.org>,
  Debian CMake Team <pkg-cmake-team@lists.alioth.debian.org>,
  Debian UBports Team <team+ubports@tracker.debian.org>,
+ Marius Gripsgard <mariogrip@debian.org>,
 Build-Depends: cmake,
                debhelper-compat (= 13),
-Standards-Version: 4.6.0
+Standards-Version: 4.6.2
 Rules-Requires-Root: no
 Homepage: https://gitlab.com/ubports/core/cmake-extras/
 Vcs-Git: https://salsa.debian.org/debian-ayatana-team/cmake-extras.git
