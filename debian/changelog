@@ -1,3 +1,10 @@
+cmake-extras (1.7-3) unstable; urgency=medium
+
+  * debian/watch:
+    + Update file for recent GitLab changes of the tags overview page.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 08 Jul 2024 09:09:54 +0200
+
 cmake-extras (1.7-2) unstable; urgency=medium
 
   * debian/patches: Add patch to workaround cmake bug (closes: #1058503)
