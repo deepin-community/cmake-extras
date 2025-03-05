@@ -87,7 +87,7 @@ elseif(EXISTS "/usr/src/gmock")
     set(GMOCK_SOURCE_DIR "/usr/src/gmock" CACHE PATH "gmock source directory")
     set(GMOCK_INCLUDE_DIRS "/usr/include" CACHE PATH "gmock source include directory")
     set(GTEST_INCLUDE_DIRS "/usr/include" CACHE PATH "gtest source include directory")
-    set(GTEST_VERSION_STR "1.7.0")
+    set(GTEST_VERSION_STR "1.8.0")
 else()
     # Try using CMake targets provided by GTest
     find_package (GTest)
@@ -145,7 +145,9 @@ ExternalProject_Add(GMock SOURCE_DIR "${GMOCK_SOURCE_DIR}"
                                            "${findgmock_gmock_main_lib}"
                                            "${findgmock_gmock_lib}"
                           INSTALL_COMMAND ""
-                          CMAKE_ARGS "-DCMAKE_CXX_FLAGS=${findgmock_cxx_flags}" -DBUILD_SHARED_LIBS=${GMOCK_BUILD_SHARED_LIBS})
+                          CMAKE_ARGS "-DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}"
+                                     "-DCMAKE_CXX_FLAGS=${findgmock_cxx_flags}"
+                                     "-DBUILD_SHARED_LIBS=${GMOCK_BUILD_SHARED_LIBS}")
 
 add_library(gtest ${findgmock_lib_type} IMPORTED)
 set_property(TARGET gtest PROPERTY IMPORTED_LOCATION ${findgmock_gtest_lib})
@@ -183,6 +185,37 @@ set(GMOCK_BOTH_LIBRARIES gmock_main gmock)
 # I understand that you're not supposd to include gtest_main and gmock_main
 # at the same time.
 set(GTEST_ALL_LIBRARIES ${GTEST_LIBRARY} ${GMOCK_BOTH_LIBRARIES})
+
+# Workaround CMake issue [1] where the imported target's file become a
+# dependency of target's autogen_timestamp_deps rule (instead of target-ordering
+# one). Since the file is made as a BYPRODUCT of a custom step, not a file rule,
+# the added dependency becomes an error.
+#
+# Marius discoverred that if you mention the target twice, the problem doesn't
+# occurred. Turns out the file-level dependency "just disappear" in that case -
+# for some reason. Since automoc doesn't use this file (and the main target's
+# target-ordering dependency is still there), there's no problem building the
+# package.
+#
+# The problem starts in 3.28.0 and is fixed in 3.28.4, so limit the workaround
+# to only that range.
+#
+# [1] https://gitlab.kitware.com/cmake/cmake/-/issues/25766
+if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.28.0" AND
+    CMAKE_VERSION VERSION_LESS "3.28.4")
+  foreach(_var
+      "GTEST_LIBRARIES" "GTEST_MAIN_LIBRARIES"
+      "GMOCK_LIBRARIES" "GTEST_BOTH_LIBRARIES"
+
+      "GTEST_LIBRARY" "GTEST_MAIN_LIBRARY"
+      "GMOCK_LIBRARY" "GMOCK_MAIN_LIBRARY"
+      "GMOCK_BOTH_LIBRARIES" "GTEST_ALL_LIBRARIES"
+  )
+    set(${_var} ${${_var}} ${${_var}})
+  endforeach()
+
+  unset(_var)
+endif()
 
 unset(findgmock_cxx_flags)
 unset(findgmock_bin_dir)

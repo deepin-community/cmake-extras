@@ -9,7 +9,7 @@ Uploaders:
  Marius Gripsgard <mariogrip@debian.org>,
 Build-Depends: cmake,
                debhelper-compat (= 13),
-Standards-Version: 4.6.2
+Standards-Version: 4.7.0
 Rules-Requires-Root: no
 Homepage: https://gitlab.com/ubports/core/cmake-extras/
 Vcs-Git: https://salsa.debian.org/debian-ayatana-team/cmake-extras.git
@@ -20,7 +20,7 @@ Architecture: all
 Multi-Arch: foreign
 Depends: ${misc:Depends},
          cmake (>= 3.1),
-         pkg-config,
+         pkgconf,
          python3,
 Suggests: googletest (>= 1.10.0.20201025),
           libgtest-dev,
