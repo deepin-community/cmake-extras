@@ -1,8 +1,13 @@
 # If you need to override the qmlplugindump binary, create the qmlplugin executable
 # target before loading this plugin.
 
+# if not QT_VERSION_MAJOR, default to 5
+if (NOT DEFINED QT_VERSION_MAJOR)
+    set(QT_VERSION_MAJOR 5)
+endif()
+
 if(NOT TARGET qmlplugindump)
-    find_program(qmlplugindump_exe qmlplugindump HINTS /usr/lib/qt5/bin/)
+    find_program(qmlplugindump_exe qmlplugindump HINTS /usr/lib/qt${QT_VERSION_MAJOR}/bin/)
 
     if(NOT qmlplugindump_exe)
       message(FATAL_ERROR "Could not locate qmlplugindump.")
@@ -29,7 +34,7 @@ endif()
 # export_qmlfiles(plugin path
 #     [SEARCH_PATH path]      # Path to search for resources in (defaults to ${CMAKE_CURRENT_SOURCE_DIR})
 #     [BINARY_DIR path]
-#     [DESTINATION path]      # Will install in ${CMAKE_INSTALL_LIBDIR}/qt5/qml unless overridden by this parameter
+#     [DESTINATION path]      # Will install in ${CMAKE_INSTALL_LIBDIR}/qt${QT_VERSION_MAJOR}/qml unless overridden by this parameter
 #     [NO_INSTALL]            # Do not install this plugin during CMake install phase
 #     [TARGET_PREFIX string]  # Will be prefixed to the target name
 # )
@@ -43,7 +48,7 @@ function(export_qmlfiles PLUGIN PATH)
     cmake_parse_arguments(QMLFILES "${options}" "${single}" "" ${ARGN})
 
     if(NOT QMLFILES_DESTINATION)
-        set(QMLFILES_DESTINATION "${CMAKE_INSTALL_LIBDIR}/qt5/qml")
+        set(QMLFILES_DESTINATION "${CMAKE_INSTALL_LIBDIR}/qt${QT_VERSION_MAJOR}/qml")
     endif()
 
     if(NOT QMLFILES_SEARCH_PATH)
@@ -96,7 +101,7 @@ endfunction()
 #
 # export_qmlplugin(plugin version path
 #     [BINARY_DIR path]
-#     [DESTINATION path] # Will install in ${CMAKE_INSTALL_LIBDIR}/qt5/qml unless overridden by this parameter
+#     [DESTINATION path] # Will install in ${CMAKE_INSTALL_LIBDIR}/qt${QT_VERSION_MAJOR}/qml unless overridden by this parameter
 #     [NO_INSTALL] # Do not install this plugin during CMake install phase
 #     [TARGET_PREFIX string]  # Will be prefixed to the target name
 #     [ENVIRONMENT string]    # Will be added to qmlplugindump's env
@@ -115,7 +120,7 @@ function(export_qmlplugin PLUGIN VERSION PATH)
     cmake_parse_arguments(QMLPLUGIN "${options}" "${single}" "${multi}" ${ARGN})
 
     if(NOT QMLPLUGIN_DESTINATION)
-        set(QMLPLUGIN_DESTINATION "${CMAKE_INSTALL_LIBDIR}/qt5/qml")
+        set(QMLPLUGIN_DESTINATION "${CMAKE_INSTALL_LIBDIR}/qt${QT_VERSION_MAJOR}/qml")
     endif()
 
     if(QMLPLUGIN_BINARY_DIR)

@@ -1,6 +1,65 @@
+2025-02-08 Mike Gabriel
+
+        * Release 1.8 (HEAD -> main, tag: 1.8)
+
+2024-11-08 Mike Gabriel
+
+        * Merge branch 'personal/mariogrip/qt6' into 'main' (e1f700f)
+
+2024-11-07 Marius Gripsgard
+
+        * QmlPlugins: Crude support for qt6 (fabc8c2)
+
+2024-05-14 Ratchanan Srirattanamet
+
+        * Merge branch 'mr/fix-ftcbfs-of-googlemock-projects' into 'main'
+          (9ddc0bd)
+
+2020-11-02 Mike Gabriel
+
+        * src/GMock/GMockConfig.cmake: Fix FTCBFS of projects using
+          GMockConfig.cmake. (b528a16)
+
+2024-04-11 Mike Gabriel
+
+        * Merge branch
+          'personal/peat-psuwit/gmock-dependency-wiring-workaround-cmake-v2'
+          into 'main' (6cad205)
+
+2024-04-05 Ratchanan Srirattanamet
+
+        * GMockConfig: switch the workaround to Marius's variant (3a1aba1)
+
+2024-03-13 Mike Gabriel
+
+        * Merge branch
+          'personal/peat-psuwit/gmock-dependency-wiring-workaround-cmake'
+          into 'main' (669add9)
+
+2024-03-13 Ratchanan Srirattanamet
+
+        * GMock: add back target-level dep & mark file-level dep as
+          workaround (7952e4c)
+          Fixes: eef0c419a8f09 ("GMock: wire
+          dependencies between GMock step and library files")
+
+2024-03-12 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/gmock-dependency-wiring' into
+          'main' (57919ab)
+
+2024-03-12 Ratchanan Srirattanamet
+
+        * GMock: wire dependencies between GMock step and library files
+          (eef0c41)
+          Fixes: b7bd24f9d886 (GMock: switch from INTERFACE
+          to IMPORTED library)
+          Fixes:
+          https://gitlab.com/ubports/development/core/libqtdbustest/-/issues/1
+
 2023-10-15 Mike Gabriel
 
-        * Release 1.7 (HEAD -> main, tag: 1.7)
+        * Release 1.7 (b9d61e4) (tag: 1.7)
 
 2022-11-21 Mike Gabriel
 
